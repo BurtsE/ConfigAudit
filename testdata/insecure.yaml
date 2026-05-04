@@ -1,0 +1,20 @@
+server:
+  host: "0.0.0.0"
+  port: 8080
+  tls:
+    insecure_skip_verify: true
+
+log:
+  output: "stdout"
+  level: "debug"
+
+database:
+  password: "mysecretpassword"
+  host: "localhost"
+
+
+tls:
+  min_version: "tls1.0"
+  cipher_suites: ["RC4-SHA", "DES-CBC3-SHA"]
+
+hash_algorithm: "md5"

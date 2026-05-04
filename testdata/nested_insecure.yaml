@@ -1,0 +1,30 @@
+deep:
+  nested:
+    config:
+      logging:
+        level: "debug"
+        debug: true
+      server:
+        bind: "0.0.0.0"
+        port: "8080"
+        tls:
+          skip_verify: true
+      database:
+        connection:
+          password: "plain_secret"
+        security:
+          hash_algorithm: "md5"
+          cipher: "des"
+      security:
+        ssl:
+          verify_mode: "none"
+        crypto:
+          min_version: "tls1.0"
+          cipher_suites: ["RC4-SHA"]
+      app:
+        debug_mode: true
+        settings:
+          log_level: "debug"
+          host: "0.0.0.0:8080"
+          verification:
+            skip_ssl_check: true

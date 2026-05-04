@@ -1,0 +1,17 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "tls": {
+      "enabled": true,
+      "insecure_skip_verify": false
+    }
+  },
+  "log": {
+    "level": "info"
+  },
+  "database": {
+    "host": "localhost",
+    "password": "${DB_PASSWORD}"
+  }
+}

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package config_audit;
+
+option go_package = "github.com/BurtsE/config-audit/proto";
+
+service ConfigAuditService {
+  rpc AuditConfig(AuditConfigRequest) returns (AuditConfigResponse);
+  rpc GetServerInfo(GetServerInfoRequest) returns (ServerInfo);
+}
+
+message AuditConfigRequest {
+  bytes config_data = 1;      
+  string config_format = 2;   
+}
+
+message Finding {
+  string severity = 1;        
+  string rule = 2;            
+  string message = 3;        
+  string recommendation = 4;   
+  string path = 5;            
+}
+
+message Summary {
+  int32 total = 1;
+  int32 high = 2;
+  int32 medium = 3;
+  int32 low = 4;
+}
+
+message AuditConfigResponse {
+  repeated Finding findings = 1;      
+  Summary summary = 2;        
+}
+
+message GetServerInfoRequest {
+}
+
+message ServerInfo {
+  string version = 1;
+  string service_name = 2;
+}
